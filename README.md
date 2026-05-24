@@ -1,16 +1,60 @@
-# React + Vite
+# Didi-Bhai Restaurant - Modern Delivery & Management Suite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A premium, full-stack digital web application for **Didi-Bhai Restaurant**. Powered by a high-performance **React + Vite** single-page frontend, a resilient **Express.js API server**, and an active **MySQL/MariaDB** database engine.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🍽️ Premium Diner Experience
+*   **Intuitive Home Menu:** Harmony-focused visual menu with dynamic categories, veg/non-veg tags, popularity banners, and stock indicators.
+*   **Enhanced Ingredient Search:** Real-time search engine querying across dish titles, categories, descriptions, ingredients (e.g. searching "ginger" or "coriander"), and add-ons.
+*   **Responsive Pill Bottom Navigation:** Smooth, fluid bottom navigation bar optimized with `:has()` focus selectors to automatically slide out of the way on virtual mobile keyboards to maximize viewport space.
+*   **Stunning Customization Modal:** Immersive ingredient detail card detailing recipes, pricing calculations, custom chef comments, and add-on pricing structures.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛡️ Administrative Console & Security Control Center
+Accessible via the highly obscured secure route:
+👉 **[http://localhost:5173/g/a/n/e/s/h/ganeshdidibhai](http://localhost:5173/g/a/n/e/s/h/ganeshdidibhai)**
 
-## Expanding the ESLint configuration
+### 🗝️ Default Permanent Credentials
+*   **Username:** `PriyaGanesh`
+*   **Password:** `GaneshAakash`
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🔒 Elite Security Telemetry & Brute Force Lockout
+1.  **Obscured Routing:** Administrative views and backend API routes have been completely relocated from standard conventions (`/didibhai`, `/api/auth`) to `/g/a/n/e/s/h/ganeshdidibhai` to guard against automated bots and scanners.
+2.  **Brute Force Lockout:** Monitors authentication requests by client IP. If an IP triggers **8 consecutive failed password attempts**, it is permanently blacklisted in the security registry.
+3.  **Security Control Center:** A live dashboard view that provides:
+    *   **Blocked IP Registry:** Lists all currently locked-out IPs with individual **Unblock** actions.
+    *   **Failed Attempt Trackers:** Displays active failed attempts (e.g., `4/8`) by IP before permanent lockout is hit, enabling administrators to clear logs.
+    *   **Manual Administration Tools:** Form allowing explicit IP unblocking or global **Unblock All IPs** actions.
+
+---
+
+## 🚀 Getting Started
+
+### 📂 Directory Architecture
+*   `/src` — React frontend codebase (pages, components, utilities, visual styling assets).
+*   `server.js` — Core Express REST API, CORS middleware, brute force database tracking, and menu storage handlers.
+*   `server/data/` — Local runtime file caching for the authentication blacklist database state.
+
+### 🛠️ Execution Scripts
+
+In the `website` directory, you can run the following commands:
+
+#### 1. Run Backend Server Only
+Runs the Express API server on `http://localhost:5000`:
+```bash
+npm run server
+```
+
+#### 2. Run Frontend Dev Server Only
+Runs the Vite single-page application dev server on `http://localhost:5173`:
+```bash
+npm run dev
+```
+
+#### 3. Run Both Concurrently (Recommended)
+Launches the background backend server and hot-reloads the frontend:
+```bash
+npm run dev:full
+```
