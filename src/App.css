@@ -1,0 +1,93 @@
+/* Phone Mock Frame Layout Wrapper CSS */
+
+.app-wrapper {
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .phone-frame {
+    width: 412px;
+    height: 884px;
+    border: 12px solid #231610;
+    border-radius: 40px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 
+                0 0 0 4px #3d251a,
+                0px 0px 0px 12px rgba(160, 65, 0, 0.15);
+    background-color: #fff8f6;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .phone-screen {
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Changed from overflow-y: auto to prevent capturing and blocking scroll gestures */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .phone-notch {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px;
+    height: 25px;
+    background-color: #231610;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .phone-notch::before {
+    content: '';
+    width: 45px;
+    height: 4px;
+    background-color: #120b08;
+    border-radius: 2px;
+    margin-right: 8px;
+  }
+
+  .phone-notch::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: #1a100a;
+    border-radius: 50%;
+  }
+}
+
+@media (max-width: 767px) {
+  .phone-frame {
+    width: 100%;
+    height: 100vh;
+    height: 100dvh; /* prevents bottom cropping from mobile browser toolbar */
+    background-color: #fff8f6;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  
+  .phone-screen {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .phone-notch {
+    display: none;
+  }
+}
