@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 const API_BASE = '/api/menu';
 
@@ -6,11 +6,6 @@ export default function AdminConsole({
   menuItems,
   setMenuItems,
   liveVisitors,
-  setLiveVisitors,
-  totalSales,
-  setTotalSales,
-  totalOrders,
-  setTotalOrders,
   onNavigateHome,
   fetchMenu,
   onLogout
@@ -26,7 +21,7 @@ export default function AdminConsole({
   const [securityMessage, setSecurityMessage] = useState('');
   const [manualIp, setManualIp] = useState('');
 
-  const fetchBlockedIPs = async () => {
+  const fetchBlockedIPs = useCallback(async () => {
     setSecurityLoading(true);
     const token = sessionStorage.getItem('adminToken');
     try {
@@ -44,7 +39,7 @@ export default function AdminConsole({
     } finally {
       setSecurityLoading(false);
     }
-  };
+  }, []);
 
   const handleUnblockIP = async (ip) => {
     if (ip !== '__all__' && !ip.trim()) {
@@ -79,14 +74,15 @@ export default function AdminConsole({
 
   useEffect(() => {
     if (activeSubTab === 'security') {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       fetchBlockedIPs();
     }
-  }, [activeSubTab]);
+  }, [activeSubTab, fetchBlockedIPs]);
 
   // Fetch latest menu from backend on mount
   useEffect(() => {
     if (fetchMenu) fetchMenu();
-  }, []);
+  }, [fetchMenu]);
 
   // Edit / Add Item State
   const [editingItem, setEditingItem] = useState(null); // when not null, modal is shown
@@ -261,7 +257,7 @@ export default function AdminConsole({
   });
 
   // Extract categories for filter
-  const categoryOptions = ['All', 'Thalis', 'Momos', 'Maggi', 'Beverages'];
+
 
 return (
     <div className="admin-container animate-fade-in">

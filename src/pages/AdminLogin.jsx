@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 const API_BASE = '/g/a/n/e/s/h/ganeshdidibhai';
 
@@ -12,12 +12,7 @@ export default function AdminLogin({ onLoginSuccess }) {
   const [attemptsLeft, setAttemptsLeft] = useState(null);
   const [shakeKey, setShakeKey] = useState(0);
 
-  // Check if IP is already blocked on mount
-  useEffect(() => {
-    checkBlockStatus();
-  }, []);
-
-  const checkBlockStatus = async () => {
+  const checkBlockStatus = useCallback(async () => {
     try {
       const res = await fetch(`${API_BASE}/status`);
       const data = await res.json();
@@ -26,9 +21,15 @@ export default function AdminLogin({ onLoginSuccess }) {
         setError('Access denied. Your IP has been blocked due to too many failed attempts. Contact admin to unblock.');
       }
     } catch (err) {
-      // Server may not be up yet, ignore
+      console.warn('Block check skipped:', err.message);
     }
-  };
+  }, []);
+
+  // Check if IP is already blocked on mount
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    checkBlockStatus();
+  }, [checkBlockStatus]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -67,6 +68,7 @@ export default function AdminLogin({ onLoginSuccess }) {
         setPassword('');
       }
     } catch (err) {
+      console.error('Login error:', err.message);
       setError('Server unavailable. Please try again later.');
       setShakeKey(k => k + 1);
     } finally {

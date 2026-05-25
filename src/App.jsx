@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import './App.css';
 
 // Components
@@ -11,7 +11,7 @@ import CustomizationSheet from './components/CustomizationSheet';
 import HomeMenu from './pages/HomeMenu';
 import SearchMenu from './pages/SearchMenu';
 import OrdersPlate from './pages/OrdersPlate';
-import AdminDashboard from './pages/AdminDashboard';
+
 import AdminConsole from './pages/AdminConsole';
 import AdminLogin from './pages/AdminLogin';
 
@@ -393,30 +393,21 @@ export default function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [menuItems, setMenuItems] = useState(INITIAL_MENU);
-  const [menuLoaded, setMenuLoaded] = useState(false);
   
   // Customization State
   const [customizingItem, setCustomizingItem] = useState(null);
-  const [addOns, setAddOns] = useState({
-    cheese: false,
-    schezwan: false,
-    description: ''
-  });
 
   // Cart State
   const [cart, setCart] = useState([]);
 
   // Admin stats
-  const [liveVisitors, setLiveVisitors] = useState(14);
-  const [totalSales, setTotalSales] = useState(14850);
-  const [totalOrders, setTotalOrders] = useState(62);
+  const [liveVisitors] = useState(14);
 
   // Client-side lightweight routing
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
 
   // Admin authentication state
   const [adminAuthenticated, setAdminAuthenticated] = useState(false);
-  const [adminAuthChecked, setAdminAuthChecked] = useState(false);
 
   // Check for existing admin session on mount
   useEffect(() => {
@@ -436,18 +427,17 @@ export default function App() {
             sessionStorage.removeItem('adminToken');
             sessionStorage.removeItem('adminLoginTime');
           }
-        } catch (err) {
+        } catch {
           // Server down, clear session
           sessionStorage.removeItem('adminToken');
           sessionStorage.removeItem('adminLoginTime');
         }
       }
-      setAdminAuthChecked(true);
     };
     checkAdminSession();
   }, []);
 
-  const handleAdminLogin = (token) => {
+  const handleAdminLogin = () => {
     setAdminAuthenticated(true);
   };
 
@@ -459,42 +449,42 @@ export default function App() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ token })
       });
-    } catch (err) { /* ignore */ }
+    } catch { /* ignore */ }
     sessionStorage.removeItem('adminToken');
     sessionStorage.removeItem('adminLoginTime');
     setAdminAuthenticated(false);
   };
 
   // Fetch menu from REST API
-  const fetchMenu = async () => {
+  const fetchMenu = useCallback(async () => {
     try {
       const res = await fetch('/api/menu');
       if (res.ok) {
         const data = await res.json();
         setMenuItems(data);
-        setMenuLoaded(true);
       }
     } catch (err) {
       console.warn('API unreachable, using local menu data:', err.message);
     }
-  };
+  }, []);
 
   // Load menu from API on first mount
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     fetchMenu();
-  }, []);
+  }, [fetchMenu]);
 
   // Auto-poll every 5 seconds on customer page to sync admin changes
   useEffect(() => {
     const isAdmin = currentPath === '/g/a/n/e/s/h/ganeshdidibhai' || currentPath === '/g/a/n/e/s/h/ganeshdidibhai/';
-    if (isAdmin) return; // Don't poll on admin page
+    if (isAdmin) return;
 
     const interval = setInterval(() => {
       fetchMenu();
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [currentPath]);
+  }, [currentPath, fetchMenu]);
 
   useEffect(() => {
     const handlePopState = () => {
@@ -550,8 +540,7 @@ export default function App() {
 
     setCart(prev => [...prev, cartItem]);
     setCustomizingItem(null);
-    setTotalSales(prev => prev + (finalPrice * (qty || 1)));
-    setTotalOrders(prev => prev + 1);
+
   };
 
   const updateQty = (cartId, delta) => {
@@ -591,9 +580,7 @@ export default function App() {
     return (matchesTitle || matchesDesc || matchesCategory || matchesIngredients || matchesAddOns) && item.available;
   });
 
-  const handleToggleStock = (id) => {
-    setMenuItems(prev => prev.map(m => m.id === id ? { ...m, available: !m.available } : m));
-  };
+
 
   if (currentPath === '/g/a/n/e/s/h/ganeshdidibhai' || currentPath === '/g/a/n/e/s/h/ganeshdidibhai/') {
     // Show login page if not authenticated
@@ -606,11 +593,6 @@ export default function App() {
         menuItems={menuItems}
         setMenuItems={setMenuItems}
         liveVisitors={liveVisitors}
-        setLiveVisitors={setLiveVisitors}
-        totalSales={totalSales}
-        setTotalSales={setTotalSales}
-        totalOrders={totalOrders}
-        setTotalOrders={setTotalOrders}
         onNavigateHome={() => navigateTo('/')}
         fetchMenu={fetchMenu}
         onLogout={handleAdminLogout}

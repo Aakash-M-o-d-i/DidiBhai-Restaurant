@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 export default function CustomizationSheet({ customizingItem, onClose, onSubmit }) {
   const [qty, setQty] = useState(1);
@@ -167,7 +167,7 @@ export default function CustomizationSheet({ customizingItem, onClose, onSubmit 
                       <input 
                         type="checkbox" 
                         checked={isChecked}
-                        onChange={(e) => {}} // handled by click
+                        onChange={() => {}} // handled by click
                         className="addon-checkbox" 
                         style={{ width: '18px', height: '18px', accentColor: 'var(--color-primary)' }}
                       />

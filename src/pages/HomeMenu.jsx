@@ -1,4 +1,3 @@
-import React from 'react';
 import CategoryChip from '../components/CategoryChip';
 import FoodCard from '../components/FoodCard';
 

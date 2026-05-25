@@ -1,0 +1,362 @@
+[
+  {
+    "id": "black-tea",
+    "title": "Black/Milk Tea",
+    "description": "Cardamom and ginger brewed traditional tea cup.",
+    "price": 20,
+    "category": "Beverages",
+    "image": "/images/black_milk_tea.png",
+    "rating": 4.9,
+    "isVeg": true,
+    "isPopular": false,
+    "available": true,
+    "addOns": [
+      { "name": "Extra Ginger", "price": 10 },
+      { "name": "Extra Sugar", "price": 5 },
+      { "name": "Extra Milk Portion", "price": 10 }
+    ],
+    "ingredients": ["Premium Tea Leaves", "Cardamom & Ginger", "Fresh Milk", "Sugar"]
+  },
+  {
+    "id": "hot-coffee",
+    "title": "Coffee",
+    "description": "Frothy hot coffee served in a traditional cup.",
+    "price": 40,
+    "category": "Beverages",
+    "image": "/images/hot_coffee.png",
+    "rating": 4.5,
+    "isVeg": true,
+    "isPopular": false,
+    "available": true,
+    "addOns": [
+      { "name": "Extra Whipped Cream", "price": 15 },
+      { "name": "Extra Espresso Shot", "price": 20 }
+    ],
+    "ingredients": ["Rich Coffee Beans", "Whipped Cream", "Steamed Milk", "Sugar"]
+  },
+  {
+    "id": "veg-momos",
+    "title": "Veg Momo (8 pcs)",
+    "description": "8 Pcs of steamed cabbage & carrot dumplings with spicy red chutney.",
+    "price": 80,
+    "category": "Momos",
+    "image": "/images/veg_momos.png",
+    "rating": 4.6,
+    "isVeg": true,
+    "isPopular": false,
+    "available": true,
+    "addOns": [
+      { "name": "Spicy Schezwan Chutney", "price": 15 },
+      { "name": "Cheese Dip Cup", "price": 20 }
+    ],
+    "ingredients": ["Steamed Cabbage & Carrot", "Thin Wrapper", "Local Garlic & Ginger"]
+  },
+  {
+    "id": "chicken-momos",
+    "title": "Chicken Momo (8 pcs)",
+    "description": "8 Pcs of juicy minced chicken dumplings served with spicy red chutney.",
+    "price": 120,
+    "category": "Momos",
+    "image": "/images/chicken_momos.png",
+    "rating": 4.8,
+    "isVeg": false,
+    "isPopular": true,
+    "available": true,
+    "addOns": [
+      { "name": "Spicy Schezwan Chutney", "price": 15 },
+      { "name": "Cheese Dip Cup", "price": 20 }
+    ],
+    "ingredients": ["Juicy Minced Chicken", "Thin Wrapper", "Fresh Coriander & Spices"]
+  },
+  {
+    "id": "plain-maggi",
+    "title": "Plain Maggi",
+    "description": "Classic bowl of plain masala noodles cooked in our secret spice blend.",
+    "price": 50,
+    "category": "Maggi",
+    "image": "/images/plain_maggi.png",
+    "rating": 4.4,
+    "isVeg": true,
+    "isPopular": false,
+    "available": true,
+    "addOns": [
+      { "name": "Extra Cheese Slice", "price": 20 },
+      { "name": "Fried Egg", "price": 15 }
+    ],
+    "ingredients": ["Springy Noodles", "Didi-Bhai Special Maggi Masala", "Skillet Butter"]
+  },
+  {
+    "id": "egg-maggi",
+    "title": "Egg Maggi",
+    "description": "Springy masala noodles tossed with soft-boiled scrambled eggs and seasoning.",
+    "price": 80,
+    "category": "Maggi",
+    "image": "/images/egg_maggi.png",
+    "rating": 4.7,
+    "isVeg": false,
+    "isPopular": false,
+    "available": true,
+    "addOns": [
+      { "name": "Extra Cheese Slice", "price": 20 },
+      { "name": "Extra Egg", "price": 15 }
+    ],
+    "ingredients": ["Double Egg", "Springy Noodles", "Signature Masala", "Coriander"]
+  },
+  {
+    "id": "aloo-thukpa",
+    "title": "Aloo thukpa",
+    "description": "Warm and comforting Himalayan noodle soup served with potatoes and fresh herbs.",
+    "price": 120,
+    "category": "Maggi",
+    "image": "/images/aloo_thukpa.png",
+    "rating": 4.6,
+    "isVeg": true,
+    "isPopular": false,
+    "available": true,
+    "addOns": [
+      { "name": "Extra Aloo Cubes", "price": 20 },
+      { "name": "Spicy Schezwan Sauce", "price": 15 }
+    ],
+    "ingredients": ["Himalayan Noodles", "Spiced Aloo Cubes", "Warm Vegetable Broth", "Ginger-Garlic"]
+  },
+  {
+    "id": "veg-thali",
+    "title": "Veg Thali",
+    "description": "Complete traditional platter with Paneer Gravy, Yellow Dal Tadka, Sabzi, Roti, Rice & Sweet.",
+    "price": 130,
+    "category": "Thalis",
+    "image": "/images/veg_thali.png",
+    "rating": 4.5,
+    "isVeg": true,
+    "isPopular": true,
+    "available": true,
+    "addOns": [
+      { "name": "Extra Rice Portion", "price": 30 },
+      { "name": "Extra Paneer Gravy", "price": 40 },
+      { "name": "Sweet Gulab Jamun", "price": 25 }
+    ],
+    "ingredients": ["Paneer Masala", "Dal Tadka", "Jeera Rice", "4 Tawa Rotis", "Sweet Gulab Jamun"]
+  },
+  {
+    "id": "chicken-thali",
+    "title": "Chicken Thali",
+    "description": "A hearty traditional platter of basmati rice, warm butter chicken curry, chicken dry stir-fry, and roti.",
+    "price": 230,
+    "category": "Thalis",
+    "image": "/images/chicken_thali.png",
+    "rating": 4.7,
+    "isVeg": false,
+    "isPopular": true,
+    "available": true,
+    "addOns": [
+      { "name": "Extra Rice Portion", "price": 30 },
+      { "name": "Extra Butter Chicken", "price": 60 },
+      { "name": "Sweet Gulab Jamun", "price": 25 }
+    ],
+    "ingredients": ["Butter Chicken Curry", "Chicken Dry Stir-Fry", "Basmati Rice", "Tawa Roti", "Sweet Gulab Jamun"]
+  },
+  {
+    "id": "pork-thali",
+    "title": "Pork thali",
+    "description": "Traditional Naga-style smoked pork slow-cooked with bamboo shoots, served with rice, dal, and local greens.",
+    "price": 350,
+    "category": "Thalis",
+    "image": "/images/pork_thali.png",
+    "rating": 4.8,
+    "isVeg": false,
+    "isPopular": false,
+    "available": true,
+    "addOns": [
+      { "name": "Extra Rice Portion", "price": 30 },
+      { "name": "Extra Smoked Pork", "price": 80 }
+    ],
+    "ingredients": ["Smoked Pork", "Bamboo Shoots", "Basmati Rice", "Local Boiled Greens", "Dal"]
+  },
+  {
+    "id": "roti-sabzi",
+    "title": "Roti Sabzi (4 pcs)",
+    "description": "4 soft whole wheat tawa rotis served with seasonal mixed vegetables curry.",
+    "price": 80,
+    "category": "Maggi",
+    "image": "/images/roti_sabzi.png",
+    "rating": 4.3,
+    "isVeg": true,
+    "isPopular": false,
+    "available": true,
+    "addOns": [
+      { "name": "Extra Rotis (2 pcs)", "price": 20 },
+      { "name": "Extra Sabzi Bowl", "price": 30 }
+    ],
+    "ingredients": ["4 Whole Wheat Rotis", "Seasonal Mixed Veg", "Traditional Masala"]
+  },
+  {
+    "id": "puri-sabzi",
+    "title": "Puri Sabzi (4 pcs)",
+    "description": "4 fluffy deep fried golden puris served with spicy dry aloo bhaji masala.",
+    "price": 80,
+    "category": "Maggi",
+    "image": "/images/puri_sabzi.png",
+    "rating": 4.5,
+    "isVeg": true,
+    "isPopular": false,
+    "available": true,
+    "addOns": [
+      { "name": "Extra Puris (2 pcs)", "price": 25 },
+      { "name": "Extra Aloo Bhaji", "price": 30 }
+    ],
+    "ingredients": ["4 Deep Fried Puris", "Spicy Dry Aloo Bhaji", "Aromatic Spices"]
+  },
+  {
+    "id": "bread-omelette",
+    "title": "Bread Omelette",
+    "description": "Soft white bread slices toasted on skillet with a double masala egg omelette.",
+    "price": 70,
+    "category": "Beverages",
+    "image": "/images/bread_omelette.png",
+    "rating": 4.4,
+    "isVeg": false,
+    "isPopular": false,
+    "available": true,
+    "addOns": [
+      { "name": "Extra Cheese Slice", "price": 20 },
+      { "name": "Double Butter Toast", "price": 15 }
+    ],
+    "ingredients": ["2 Farm Eggs", "2 Slices Toast Bread", "Chopped Onion & Chillies"]
+  },
+  {
+    "id": "single-omelette",
+    "title": "Single Omelette",
+    "description": "Fluffy single egg omelette cooked on skillet with fresh onion and coriander.",
+    "price": 30,
+    "category": "Beverages",
+    "image": "/images/double_omelette.png",
+    "rating": 4.1,
+    "isVeg": false,
+    "isPopular": false,
+    "available": true,
+    "addOns": [
+      { "name": "Cheese Slice", "price": 20 },
+      { "name": "Extra Toast Slices (2)", "price": 15 }
+    ],
+    "ingredients": ["1 Farm Egg", "Fresh Coriander & Onion", "Skillet Butter"]
+  },
+  {
+    "id": "double-omelette",
+    "title": "Double Omelette",
+    "description": "Skillet double egg omelette cooked with chopped onions, tomatoes, and spicy green chilies.",
+    "price": 50,
+    "category": "Beverages",
+    "image": "/images/double_omelette.png",
+    "rating": 4.2,
+    "isVeg": false,
+    "isPopular": true,
+    "available": true,
+    "addOns": [
+      { "name": "Cheese Slice", "price": 20 },
+      { "name": "Toast Slices (2)", "price": 15 }
+    ],
+    "ingredients": ["2 Farm Eggs", "Fresh Green Chillies", "Onions & Tomatoes"]
+  },
+  {
+    "id": "veg-chowmein",
+    "title": "Veg Chowmein",
+    "description": "Wok stir-fried noodles tossed with crisp local market greens, shredded carrots, cabbage, and soy sauce.",
+    "price": 100,
+    "category": "Momos",
+    "image": "/images/veg_chowmein.png",
+    "rating": 4.4,
+    "isVeg": true,
+    "isPopular": false,
+    "available": true,
+    "addOns": [
+      { "name": "Extra Veggies", "price": 20 },
+      { "name": "Spicy Schezwan Sauce", "price": 15 }
+    ],
+    "ingredients": ["Wok Tossed Noodles", "Shredded Cabbage", "Julienne Carrots", "Bell Peppers", "Soy Sauce"]
+  },
+  {
+    "id": "chicken-chowmein",
+    "title": "Chicken Chowmein",
+    "description": "Wok stir-fried noodles tossed with tender chicken slivers, garlic, local vegetables, and savory sauces.",
+    "price": 120,
+    "category": "Momos",
+    "image": "/images/chicken_chowmein.png",
+    "rating": 4.7,
+    "isVeg": false,
+    "isPopular": true,
+    "available": true,
+    "addOns": [
+      { "name": "Extra Chicken", "price": 40 },
+      { "name": "Spicy Schezwan Sauce", "price": 15 }
+    ],
+    "ingredients": ["Tossed Noodles", "Tender Chicken", "Shredded Cabbage", "Garlic & Ginger Soy"]
+  },
+  {
+    "id": "aloo-waiwai",
+    "title": "Aloo waiwai",
+    "description": "Dry Wai Wai instant noodles tossed with spicy boiled potato cubes, onion, mustard oil, and lime.",
+    "price": 80,
+    "category": "Momos",
+    "image": "/images/aloo_waiwai.png",
+    "rating": 4.5,
+    "isVeg": true,
+    "isPopular": false,
+    "available": true,
+    "addOns": [
+      { "name": "Extra Potato Cubes", "price": 15 },
+      { "name": "Extra Lime & Onion", "price": 10 }
+    ],
+    "ingredients": ["Crispy Wai Wai Noodles", "Spiced Potato Cubes", "Fresh Lime Juice", "Chopped Onion", "Mustard Oil"]
+  },
+  {
+    "id": "ramen-pouch-egg",
+    "title": "Ramen with Pouch Egg",
+    "description": "Korean style spicy instant ramen soup topped with a perfectly poached egg and fresh green onions.",
+    "price": 250,
+    "category": "Thalis",
+    "image": "/images/ramen_pouch_egg.png",
+    "rating": 4.8,
+    "isVeg": false,
+    "isPopular": true,
+    "available": true,
+    "addOns": [
+      { "name": "Extra Poached Egg", "price": 20 },
+      { "name": "Cheese Slice", "price": 20 }
+    ],
+    "ingredients": ["Spicy Ramen Broth", "Perfect Poached Egg", "Green Onion Garnish", "Nori strips"]
+  },
+  {
+    "id": "chicken-chilli",
+    "title": "Chicken chilli (8 pieces)",
+    "description": "8 pieces of crispy batter-fried chicken cubes tossed with bell peppers and onion in a spicy soy-chilli glaze.",
+    "price": 250,
+    "category": "Thalis",
+    "image": "/images/chicken_chilli.png",
+    "rating": 4.7,
+    "isVeg": false,
+    "isPopular": false,
+    "available": true,
+    "addOns": [
+      { "name": "Extra Chilli Soy Glaze", "price": 15 },
+      { "name": "Extra Peppers & Onion", "price": 15 }
+    ],
+    "ingredients": ["8 batter-fried Chicken", "Green Bell Peppers", "Sliced Onion", "Chilli Soy Glaze"]
+  },
+  {
+    "id": "chicken-karchi-marchi",
+    "title": "Chicken Karchi marchi",
+    "description": "Crispy skillet local dry stir-fry chicken nuggets flavored with fresh local bird's eye green chillies and curry leaves.",
+    "price": 150,
+    "category": "Thalis",
+    "image": "/images/chicken_karchi_marchi.png",
+    "rating": 4.6,
+    "isVeg": false,
+    "isPopular": false,
+    "available": true,
+    "addOns": [
+      { "name": "Extra Green Chillies", "price": 10 },
+      { "name": "Extra Chicken Nuggets", "price": 40 }
+    ],
+    "ingredients": ["Skillet Fried Chicken Nuggets", "Bird's Eye Green Chillies", "Curry Leaves", "Ginger-Garlic"]
+  }
+]

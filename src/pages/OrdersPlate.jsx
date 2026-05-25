@@ -1,4 +1,3 @@
-import React from 'react';
 
 export default function OrdersPlate({ cart, updateQty, getSubtotal, onCheckout, onNavigateHome }) {
   // Helper to get nice subtitles matching authentic style
